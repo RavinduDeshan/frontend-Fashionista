@@ -21,6 +21,7 @@ import './index.css';
 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
     import    'mdbreact/dist/css/mdb.css';
+import config from "../../configure";
 
 export default class UserProfile extends React.Component {
     constructor(props) {
@@ -101,7 +102,7 @@ export default class UserProfile extends React.Component {
     getUserDetails() {
         console.log("----------------------------");
 
-        axios.get('http://localhost:4000/users/' + this.state.userid)
+        axios.get(`${config.host}/users/` + this.state.userid)
             .then(response => {
                 console.log(response.data.name);
                 this.setState({
@@ -144,7 +145,7 @@ export default class UserProfile extends React.Component {
                         console.log("**" + passwordEdit );
                         console.log("**" + phoneEdit);
 
-                        axios.get('http://localhost:4000/users/update/'+ this.state.idEdit+'/'+ this.state.nameEdit+'/'+ this.state.addressEdit+'/'+
+                        axios.get(`${config.host}/users/update/`+ this.state.idEdit+'/'+ this.state.nameEdit+'/'+ this.state.addressEdit+'/'+
                             this.state.emailEdit  +'/'+ this.state.usernameEdit +'/'+ this.state.passwordEdit +'/' + this.state.phoneEdit)
                             .then(response => {
                                     console.log(response);
@@ -211,7 +212,7 @@ export default class UserProfile extends React.Component {
             reverseButtons: true
         }).then((result) => {
             if (result.value) {
-                axios.get('http://localhost:4000/users/delete/' + id).then(response => {
+                axios.get(`${config.host}/users/delete/` + id).then(response => {
                     if (response.data.userDelete === 'success') {
                         swalWithBootstrapButtons.fire(
                             'Deleted!',

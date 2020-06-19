@@ -19,7 +19,8 @@ import Navbar from "./Navbar";
 import './index.css';
 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
-    import    'mdbreact/dist/css/mdb.css';
+import    'mdbreact/dist/css/mdb.css';
+import config from "../../configure";
 
   
 
@@ -157,7 +158,7 @@ class UserSignUp extends React.Component {
                                             password: this.state.password,
                                             phone: this.state.phone,
                                         }
-                                        axios.post('http://localhost:4000/users/add', newUser)
+                                        axios.post(`${config.host}/users/add`, newUser)
                                             .then(res => {
                                                     console.log(res)
                                                     console.log(newUser);
