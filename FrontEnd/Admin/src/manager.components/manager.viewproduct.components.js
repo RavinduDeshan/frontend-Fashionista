@@ -215,7 +215,7 @@ export default class viewproduct extends Component {
         token = localStorage.getItem('manager_token');
 
 
-        axios.get(`http://${config.host}:${config.port}/category/getall`, {
+        axios.get(`${config.host}/category/getall`, {
             headers:
             {
                 manager_token: token
@@ -244,7 +244,7 @@ export default class viewproduct extends Component {
 
     getProduct() {
         const token = localStorage.getItem('manager_token');
-        axios.get(`http://${config.host}:${config.port}/product/manager/` + this.props.match.params.id, {
+        axios.get(`${config.host}/product/manager/` + this.props.match.params.id, {
             headers:
             {
                 manager_token: token
@@ -320,7 +320,7 @@ export default class viewproduct extends Component {
         console.log("id is", this.props.match.params.id);
 
 
-        axios.get(`http://${config.host}:${config.port}/order/getbyProduct/` + this.props.match.params.id, {
+        axios.get(`${config.host}/order/getbyProduct/` + this.props.match.params.id, {
             headers:
             {
                 manager_token: token
@@ -351,7 +351,7 @@ export default class viewproduct extends Component {
 
         token = localStorage.getItem('manager_token')
 
-        axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+        axios.get(`${config.host}/login/manager-token-validate`, {
 
             headers:
             {
@@ -639,7 +639,7 @@ export default class viewproduct extends Component {
 
                 token = localStorage.getItem('manager_token')
 
-                await axios.post(`http://${config.host}:${config.port}/product/upload`, formData, {
+                await axios.post(`${config.host}/product/upload`, formData, {
 
                     headers:
                     {
@@ -738,7 +738,7 @@ export default class viewproduct extends Component {
 
                     token = localStorage.getItem('manager_token')
 
-                    axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+                    axios.get(`${config.host}/login/manager-token-validate`, {
 
                         headers:
                         {
@@ -1016,7 +1016,7 @@ export default class viewproduct extends Component {
 
 
 
-        axios.post(`http://${config.host}:${config.port}/product/update/` + this.props.match.params.id, product, {
+        axios.post(`${config.host}/product/update/` + this.props.match.params.id, product, {
             headers:
             {
                 manager_token: token
@@ -1098,7 +1098,7 @@ export default class viewproduct extends Component {
 
 
                 // 
-                axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+                axios.get(`${config.host}/login/manager-token-validate`, {
 
                     headers:
                     {

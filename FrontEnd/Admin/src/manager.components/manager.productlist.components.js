@@ -171,7 +171,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/category/getall`, {
+    axios.get(`${config.host}/category/getall`, {
       headers:
       {
         manager_token: token
@@ -195,7 +195,7 @@ export default class productList extends Component {
 
   getAllOrders() {
     const token = localStorage.getItem('manager_token');
-    axios.get(`http://${config.host}:${config.port}/order/managerlist`, {
+    axios.get(`${config.host}/order/managerlist`, {
       headers:
       {
         manager_token: token
@@ -227,7 +227,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/product/all`, {
+    axios.get(`${config.host}/product/all`, {
       headers:
       {
         manager_token: token
@@ -253,7 +253,7 @@ export default class productList extends Component {
 
 
     const token = localStorage.getItem('manager_token');
-    axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+    axios.get(`${config.host}/login/manager-token-validate`, {
 
       headers:
       {
@@ -343,7 +343,7 @@ export default class productList extends Component {
           // 
 
           const token = localStorage.getItem('manager_token');
-          axios.delete(`http://${config.host}:${config.port}/product/delete/` + id,
+          axios.delete(`${config.host}/product/delete/` + id,
             {
               headers:
               {
