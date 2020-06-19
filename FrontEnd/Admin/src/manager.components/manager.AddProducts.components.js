@@ -73,7 +73,7 @@ export default class addproducts extends Component {
         token = localStorage.getItem('manager_token');
 
 
-        axios.get(`http://${config.host}:${config.port}/category/getall`, {
+        axios.get(`${config.host}/category/getall`, {
             headers:
             {
                 manager_token: token
@@ -104,7 +104,7 @@ export default class addproducts extends Component {
 
         token = localStorage.getItem('manager_token')
 
-        axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+        axios.get(`${config.host}/login/manager-token-validate`, {
 
             headers:
             {
@@ -391,7 +391,7 @@ export default class addproducts extends Component {
 
                 token = localStorage.getItem('manager_token')
 
-                await axios.post(`http://${config.host}:${config.port}/product/upload`, formData, {
+                await axios.post(`${config.host}/product/upload`, formData, {
 
                     headers:
                     {
@@ -486,7 +486,7 @@ export default class addproducts extends Component {
 
                     token = localStorage.getItem('manager_token')
 
-                    axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+                    axios.get(`${config.host}/login/manager-token-validate`, {
 
                         headers:
                         {
@@ -759,7 +759,7 @@ export default class addproducts extends Component {
         } else {
 
 
-            axios.post(`http://${config.host}:${config.port}/product/add`, product, {
+            axios.post(`${config.host}/product/add`, product, {
                 headers:
                 {
                     manager_token: token
@@ -814,7 +814,7 @@ export default class addproducts extends Component {
 
 
                     // 
-                    axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+                    axios.get(`${config.host}/login/manager-token-validate`, {
 
                         headers:
                         {

@@ -40,7 +40,7 @@ class SalesLine extends Component{
 
         const token = localStorage.getItem('manager_token');
     
-      await  axios.get(`http://${config.host}:${config.port}/order/`, {
+      await  axios.get(`${config.host}/order/`, {
           headers:
           {
             manager_token: token
@@ -120,7 +120,7 @@ class SalesLine extends Component{
 
             //recieve data by labels
            const token = localStorage.getItem('manager_token');
-     await   axios.get(`http://${config.host}:${config.port}/order/byDate/` + key, {
+     await   axios.get(`${config.host}/order/byDate/` + key, {
             headers:
             {
                 manager_token: token

@@ -32,7 +32,7 @@ class pie extends Component{
 
         const token = localStorage.getItem('manager_token');
     
-      await  axios.get(`http://${config.host}:${config.port}/category/getall`, {
+      await  axios.get(`${config.host}/category/getall`, {
           headers:
           {
             manager_token: token
@@ -78,7 +78,7 @@ class pie extends Component{
             let key = this.state.labels[index];
 
            const token = localStorage.getItem('manager_token');
-        axios.get(`http://${config.host}:${config.port}/product/ByCategory/` + key, {
+        axios.get(`${config.host}/product/ByCategory/` + key, {
             headers:
             {
                 manager_token: token

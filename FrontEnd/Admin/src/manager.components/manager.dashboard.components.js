@@ -134,7 +134,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/users/managerlist`, {
+    axios.get(`${config.host}/users/managerlist`, {
       headers:
       {
         manager_token: token
@@ -160,7 +160,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/product/recent`, {
+    axios.get(`${config.host}/product/recent`, {
       headers:
       {
         manager_token: token
@@ -185,7 +185,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/product/updated`, {
+    axios.get(`${config.host}/product/updated`, {
       headers:
       {
         manager_token: token
@@ -211,7 +211,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/product/lowstock`, {
+    axios.get(`${config.host}/product/lowstock`, {
       headers:
       {
         manager_token: token
@@ -236,7 +236,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/product/top-discount`, {
+    axios.get(`${config.host}/product/top-discount`, {
       headers:
       {
         manager_token: token
@@ -260,7 +260,7 @@ export default class productList extends Component {
   // get all products
   getAllProducts() {
     const token = localStorage.getItem('manager_token');
-    axios.get(`http://${config.host}:${config.port}/product/all`, {
+    axios.get(`${config.host}/product/all`, {
       headers:
       {
         manager_token: token
@@ -282,7 +282,7 @@ export default class productList extends Component {
   // get all orders
   getAllOrders() {
     const token = localStorage.getItem('manager_token');
-    axios.get(`http://${config.host}:${config.port}/order/managerlist`, {
+    axios.get(`${config.host}/order/managerlist`, {
       headers:
       {
         manager_token: token
@@ -308,7 +308,7 @@ export default class productList extends Component {
 
     const token = localStorage.getItem('manager_token');
 
-    axios.get(`http://${config.host}:${config.port}/category/getall`, {
+    axios.get(`${config.host}/category/getall`, {
       headers:
       {
         manager_token: token
@@ -355,7 +355,7 @@ export default class productList extends Component {
 
 
     const token = localStorage.getItem('manager_token');
-    axios.get(`http://${config.host}:${config.port}/login/manager-token-validate`, {
+    axios.get(`${config.host}/login/manager-token-validate`, {
 
       headers:
       {

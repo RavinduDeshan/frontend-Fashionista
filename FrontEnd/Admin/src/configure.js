@@ -1,6 +1,6 @@
 // DB.js
 
 module.exports = {
-  host:"localhost",
+  host:"https://frozen-temple-74158.herokuapp.com",
   
 };
