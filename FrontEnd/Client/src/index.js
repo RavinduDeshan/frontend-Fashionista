@@ -6,13 +6,14 @@ import { registerServices, serviceManager } from "services/manager";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "store";
 import Routes from "routes";
+import config from "../src/configure";
 
 import "./index.scss";
 
 //api
 const settings = {
   api: {
-    baseUrl: "http://localhost:4000",
+    baseUrl: config.host,
   },
 };
 
