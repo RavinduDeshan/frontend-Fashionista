@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+import config from '../../configure';
 
 export default class Users extends Component {
 
@@ -31,7 +32,7 @@ export default class Users extends Component {
   componentDidMount() {
 
     try {
-      axios.get('http://localhost:4000/users', {
+      axios.get(`${config.host}/users`, {
         headers:
         {
           admin_token: this.token

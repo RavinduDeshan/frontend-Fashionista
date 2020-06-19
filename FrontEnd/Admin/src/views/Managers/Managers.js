@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import { CardContent } from '@material-ui/core';
+import config from '../../configure';
 
 export default class Managers extends Component {
 
@@ -102,7 +103,7 @@ export default class Managers extends Component {
   componentDidMount() {
 
     try {
-      axios.get('http://localhost:4000/managers',)
+      axios.get(`${config.host}/managers`,)
         .then(response => {
           this.setState({ all_managers: response.data });
         })
@@ -132,7 +133,7 @@ export default class Managers extends Component {
       if (this.state.manager_username !== '' && this.state.manager_password !== '' && this.state.manager_email !== '') {
 
         let insertManager = async () => {
-          let response = await axios.post('http://localhost:4000/managers/add', obj,{
+          let response = await axios.post(`${config.host}/managers/add`, obj,{
             headers:
             {
               admin_token: this.token
@@ -164,7 +165,7 @@ export default class Managers extends Component {
 
         let updateManager = async () => {
 
-          let response = await axios.post('http://localhost:4000/managers/update/' + this.UpdateId, obj,{
+          let response = await axios.post(`${config.host}/managers/update/` + this.UpdateId, obj,{
             headers:
             {
               admin_token: this.token
@@ -200,7 +201,7 @@ export default class Managers extends Component {
 
     this.UpdateId = id;
 
-    axios.get('http://localhost:4000/managers/edit/' + id,{
+    axios.get(`${config.host}/managers/edit/` + id,{
       headers:
       {
         admin_token: this.token
@@ -240,7 +241,7 @@ export default class Managers extends Component {
   deleteManager(id) {
 
     let delManager = async () => {
-      let response = await axios.get('http://localhost:4000/managers/delete/' + id,{
+      let response = await axios.get(`${config.host}/managers/delete/` + id,{
         headers:
             {
               admin_token: this.token

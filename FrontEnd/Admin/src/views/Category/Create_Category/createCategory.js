@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import { CardContent } from '@material-ui/core';
+import config from '../../../configure';
 
 export default class CreateCategory extends Component {
 
@@ -108,7 +109,7 @@ export default class CreateCategory extends Component {
 
         let insertCat = async () => {
 
-          let response = await axios.post('http://localhost:4000/Category/add', obj, {
+          let response = await axios.post(`${config.host}/Category/add`, obj, {
             headers:
             {
               admin_token: this.token
@@ -131,7 +132,7 @@ export default class CreateCategory extends Component {
       }else {
 
         let updateCat = async () => {
-          let response = await axios.post('http://localhost:4000/Category/update/' + this.state.UpdateId, obj, {
+          let response = await axios.post(`${config.host}/Category/update/` + this.state.UpdateId, obj, {
             headers:
             {
               admin_token: this.token
@@ -163,7 +164,7 @@ export default class CreateCategory extends Component {
   //Get categories from db and display
   componentDidMount() {
     console.log(this.token)
-    axios.get('http://localhost:4000/Category/admin', {
+    axios.get(`${config.host}/Category/admin`, {
       headers:
       {
         admin_token: this.token
@@ -182,7 +183,7 @@ export default class CreateCategory extends Component {
   delete(id) {
 
     let del = async () => {
-      let response = await axios.get('http://localhost:4000/Category/delete/' + id, {
+      let response = await axios.get(`${config.host}/Category/delete/` + id, {
         headers:
         {
           admin_token: this.token
@@ -208,7 +209,7 @@ export default class CreateCategory extends Component {
       UpdateId : id
     });
 
-    axios.get('http://localhost:4000/Category/edit/' + id, {
+    axios.get(`${config.host}/Category/edit/` + id, {
       headers:
       {
         admin_token: this.token

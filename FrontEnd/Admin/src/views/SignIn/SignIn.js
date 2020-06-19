@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import {blue, lightBlue} from '@material-ui/core/colors';
 import {black} from 'color-name';
+import config from '../../configure';
 
 const schema = {
   username: {
@@ -181,7 +182,7 @@ const SignIn = props => {
         password: formState.values.password
       }
 
-      let response = await axios.post('http://localhost:4000/login', obj);
+      let response = await axios.post(`${config.host}/login`, obj);
 
       if (typeof response.data.msg !== 'undefined') {
         alert(response.data.msg);

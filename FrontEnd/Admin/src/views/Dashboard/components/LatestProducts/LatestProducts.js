@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Card} from "react-bootstrap";
+import config from '../../../../configure'
 
 
 function getAvgRating(ratings) {
@@ -77,7 +78,7 @@ export default class LatestProducts extends Component {
 
     const token = localStorage.getItem("admin_token");
     
-    axios.get('http://localhost:4000/product/admin-all',{
+    axios.get(`${config.host}/product/admin-all`,{
 
       headers:
       {
