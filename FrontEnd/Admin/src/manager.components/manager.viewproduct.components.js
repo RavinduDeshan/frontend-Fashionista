@@ -773,7 +773,7 @@ export default class viewproduct extends Component {
                             title: 'Session Has Expired',
                             html:
                                 '<h4>Last Session Details</h4><br/><b>User ID :</b> ' + localStorage.getItem("id") + '<br/>' +
-                                'Please Log In again and come back to this page to Continue. <br/><a class="btn btn-success" href="http://localhost:3000/manager-Sign-In/" target="_blank">Log In Here</a>',
+                                'Please Log In again and come back to this page to Continue. <br/><a class="btn btn-success" href="https://fashionista---admin.web.app/manager-Sign-In/" target="_blank">Log In Here</a>',
                             showConfirmButton: false,
                             timer: 10000,
                             backdrop: `
@@ -1138,7 +1138,7 @@ export default class viewproduct extends Component {
                         title: 'Session Has Expired',
                         html:
                             '<h4>Last Session Details</h4><br/><b>User ID :</b> ' + localStorage.getItem("id") + '<br/>' +
-                            'Please Log In again and come back to this page to Continue. <br/><a class="btn btn-success" href="http://localhost:3000/manager-Sign-In/" target="_blank">Log In Here</a>',
+                            'Please Log In again and come back to this page to Continue. <br/><a class="btn btn-success" href="https://fashionista---admin.web.app/manager-Sign-In/" target="_blank">Log In Here</a>',
                         showConfirmButton: false,
                         timer: 10000,
                         backdrop: `
