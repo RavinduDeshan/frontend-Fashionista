@@ -228,7 +228,7 @@ export default class UserProfile extends React.Component {
                         console.log("deleted profile called");
                         localStorage.removeItem('UserSignedIn');
                         localStorage.removeItem('userid');
-                        this.props.history.push('/login');
+                        this.props.history.push('/signup');
                         window.location.reload();
                         console.log("directed to login page");
                     }
